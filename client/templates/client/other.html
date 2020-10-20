@@ -10,7 +10,7 @@
 <body>
   <div id="app"></div>
 </body>
-{% load static %}
-<script type="text/javascript" src="{% static 'client/js/other.js'%}"></script>
+{% load webpack %}
+<script type="text/javascript" src="{% assets 'other'%}"></script>
 
 </html>

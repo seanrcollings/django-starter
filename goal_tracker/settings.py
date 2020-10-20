@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from typing import List
 
 ENVIRONMENT = "development"
+
+WEBPACK_ROOT_URL = "http://localhost:3000"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +30,7 @@ SECRET_KEY = "#*%5d^*z(86!-k&0ablratz_z7(%f*$4@6(%%vf%98_t$(&=*3"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: List[str] = []
 
 
 # Application definition

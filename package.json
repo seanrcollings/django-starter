@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "clear": "rm client/static/client/js/*",
-    "dev": "npx webpack-dev-server --config goal_tracker/webpack/dev.config.js",
-    "build": "npx webpack-dev-server --config goal_tracker/webpack/dev.config.js"
+    "clear": "rm -rf client/static/client/js/*",
+    "dev": "yarn run clear && npx webpack-dev-server --config goal_tracker/webpack/dev.config.js",
+    "build": "yarn run clear && npx webpack --config goal_tracker/webpack/prod.config.js"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",

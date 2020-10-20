@@ -2,23 +2,13 @@ const path = require("path");
 const utils = require("./utils");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: utils.getPacks("./client/packs"),
   output: {
     path: path.resolve(__dirname, "../../client/static/client/js"),
     filename: "[name].js",
     chunkFilename: "[id]-[chunkhash].js",
     publicPath: "/static/",
-  },
-  devServer: {
-    overlay: true,
-    port: 3000,
-    // writeToDisk: true,
-    hot: true,
-    compress: true,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
   },
   module: {
     rules: [
@@ -43,5 +33,4 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
-  devtool: "source-map",
 };
