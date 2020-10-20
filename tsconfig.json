@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "es6",
+        "target": "es5",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "outDir": "./client/static/client/js/",
+        "sourceMap": true,
+        "jsx": "react",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+    }
+}

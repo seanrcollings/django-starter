@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Setting up Resynk Dev environement..."
+
+cp demo.env .env
+
+# Checks if pipenv is installed
+if [ -x "$(command --version)" ]; then
+    pip3 install pipenv > /dev/null
+fi
+
+export PIPENV_VENV_IN_PROJECT="enabled"
+pipenv install --dev > /dev/null
+
+cd frontend
+npm install > /dev/null
+
+echo "✅ Done!"

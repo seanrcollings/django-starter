@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+mypy = "*"
+pylint = "*"
+black = "*"
+django-stubs = "*"
+psycopg2-binary = "*"
+django-webpack-loader = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
