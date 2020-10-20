@@ -36,6 +36,7 @@ ALLOWED_HOSTS: List[str] = []
 # Application definition
 
 INSTALLED_APPS = [
+    "users.apps.UsersConfig",
     "client.apps.ClientConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -60,7 +61,7 @@ ROOT_URLCONF = "goal_tracker.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

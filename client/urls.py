@@ -1,5 +1,7 @@
-from django.urls import path
+from django.urls import path, re_path
 
 from . import views
 
-urlpatterns = [path("test", views.index), path("other", views.other)]
+catch_all: str = r"(?P<path>.*)"
+
+urlpatterns = [re_path(r"test/" + catch_all, views.index), path("other", views.other)]

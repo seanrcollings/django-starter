@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-</head>
-
-<body>
-  <div id="app"></div>
-</body>
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <div id="app"></div>
+{% endblock content %}
+{% block scripts %}
 {% load webpack %}
-<script type="text/javascript" src="{% assets 'other'%}"></script>
-
-</html>
+    <script type="text/javascript" src="{% assets 'other'%}"></script>
+{% endblock scripts %}
