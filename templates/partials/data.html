@@ -1,0 +1,10 @@
+<script>
+    window.DATA = {
+        user: {
+            loggedIn: {% if request.user.is_authenticated %} true{% else %} false{% endif %},
+            username: "{{ request.user.username }}",
+            firstName: "{{ request.user.first_name }}",
+            lastName: "{{ request.user.last_name }}",
+        }
+    };
+</script>

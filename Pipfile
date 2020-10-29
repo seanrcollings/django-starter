@@ -13,6 +13,9 @@ black = "*"
 django-stubs = "*"
 psycopg2-binary = "*"
 django-webpack-loader = "*"
+lib = {editable = true, path = "./lib"}
+djangorestframework = "*"
+pylint-django = "*"
 
 [requires]
 python_version = "3.8"
