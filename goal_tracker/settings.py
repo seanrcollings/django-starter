@@ -22,6 +22,7 @@ ENVIRONMENT = "development"
 
 WEBPACK_ROOT_URL = "http://localhost:3000"
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -39,7 +40,8 @@ ALLOWED_HOSTS: List[str] = []
 INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "client.apps.ClientConfig",
-    "lib.apps.LibConfig",
+    "libs.apps.LibsConfig",
+    "django_extensions",
     "rest_framework",
     "django.contrib.admin",
     "django.contrib.auth",

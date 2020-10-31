@@ -9,7 +9,9 @@
     "build": "npx webpack --config goal_tracker/webpack/prod.config.js"
   },
   "dependencies": {
+    "@types/js-cookie": "^2.2.6",
     "axios": "^0.21.0",
+    "js-cookie": "^2.2.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "styled-components": "^5.2.1"

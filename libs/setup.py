@@ -7,6 +7,6 @@ setuptools.setup(
     author="Sean Collings",
     author_email="sean@seanrcollings.com",
     packages=setuptools.find_packages("."),
-    # package_dir={"": "src"},
+    package_dir={"": "."},
     python_requires=">=3.8",
 )
