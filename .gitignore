@@ -4,3 +4,4 @@ client/static/client/js
 __pycache__
 **/**.egg-info
 lib/build
+.venv
