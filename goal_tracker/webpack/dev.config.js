@@ -13,7 +13,6 @@ module.exports = {
   devServer: {
     overlay: true,
     port: 3000,
-    // writeToDisk: true,
     hot: true,
     compress: true,
     headers: {

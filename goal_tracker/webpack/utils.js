@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 const process = require("process");
-const { dir } = require("console");
 
 function getPacks(directory) {
   const directoryPath = path.join(process.cwd(), directory);

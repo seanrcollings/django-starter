@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { useGet } from "./common";
+import api from "./common";
+import styled from "styled-components";
 
-interface UserType {
-  id: number;
-  username: string;
-  email: string;
-}
+import "./styles/main.scss";
+
+const User = styled.div`
+  color: red;
+`;
 
 function App() {
-  const { data, error, loading } = useGet<UserType[]>("/api/users");
+  const { data, error, loading } = api.getUser(1);
 
   if (loading) {
     return <div>Loading....</div>;
@@ -19,13 +20,7 @@ function App() {
   }
 
   if (data) {
-    return (
-      <div>
-        {data.map(user => (
-          <div key={user.id}>{user.username}</div>
-        ))}
-      </div>
-    );
+    return <User>{data.username}</User>;
   }
   return <div></div>;
 }
