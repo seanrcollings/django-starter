@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import api from "./common";
+import api from "../common";
 import styled from "styled-components";
 
 import "./styles/main.scss";
