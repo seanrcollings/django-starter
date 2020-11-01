@@ -15,11 +15,6 @@ const User = styled.div`
   color: white;
 `;
 
-interface Response {
-  message: string;
-  status: number;
-}
-
 function App() {
   const { data, error, loading } = api.getUsers();
   if (loading) {

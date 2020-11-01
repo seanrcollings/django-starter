@@ -11,9 +11,21 @@ class Command(BaseCommand):
     help = "Wrapper around django_extensions show_url to provide better formatting and various options"
 
     def add_arguments(self, parser):
-        parser.add_argument("-f", "--filter")
+        parser.add_argument(
+            "-f",
+            "--filter",
+            help="Filter urls to contain the provided string",
+        )
+        parser.add_argument(
+            "-nf",
+            "--no-format",
+            action="store_true",
+            default=False,
+            help="Disable the special formatting",
+        )
 
     def handle(self, *args, **options):
+        print(options)
         out = StringIO()
         call_command("show_urls", stdout=out)
         routes = out.getvalue().split("\n")
@@ -31,10 +43,13 @@ class Command(BaseCommand):
 
         for url in urls:
             url, method, name = url.values()
-            self.stdout.write(
-                (
-                    f"{url:<{url_width}}"
-                    f"{method:<{method_width}}"
-                    f"{name:<{name_width}}"
+            if options["no_format"]:
+                self.stdout.write(f"{url}     {method}     {name}")
+            else:
+                self.stdout.write(
+                    (
+                        f"{url:<{url_width}}"
+                        f"{method:<{method_width}}"
+                        f"{name:<{name_width}}"
+                    )
                 )
-            )

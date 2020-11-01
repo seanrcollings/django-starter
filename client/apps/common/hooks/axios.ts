@@ -72,7 +72,7 @@ export function usePost<T>(url: string, config: object = {}) {
   });
 
   const execute = useCallback(() => {
-    setState(prevState => ({ ...prevState, loading: true }));
+    setState({ ...state, loading: true });
     executePost<T>(url, config, state, setState);
   }, [url, config]);
 
