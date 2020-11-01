@@ -1,6 +1,6 @@
 import { useGet } from ".";
 
-interface UserType {
+export interface UserType {
   id: number;
   username: string;
   email: string;

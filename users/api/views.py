@@ -5,16 +5,12 @@ from rest_framework.response import Response
 from .serializers import UserSerializer
 
 
-from rest_framework import generics
-from rest_framework.permissions import IsAdminUser
-
-
 class UserViewSet(viewsets.ModelViewSet):
     """API Endpoint to view or edit users"""
 
     queryset = User.objects.all().order_by("date_joined")
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, permissions.IsAdminUser]
 
     def create(self, request, *args, **kwargs):
         # entry point from the route
