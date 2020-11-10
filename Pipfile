@@ -4,18 +4,18 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-
-[packages]
 mypy = "*"
 pylint = "*"
 black = "*"
+httpie = "*"
+
+[packages]
 django-stubs = "*"
 psycopg2-binary = "*"
 django-webpack-loader = "*"
 djangorestframework = "*"
 pylint-django = "*"
 django-extensions = "*"
-httpie = "*"
 lib = {editable = true, path = "./libs"}
 django = "*"
 django-ninja = "*"

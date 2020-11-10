@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "Setting up Goal Tracker Dev environement..."
+
+
+# Checks if pipenv is installed
+if [ -x "$(command --version)" ]; then
+    pip3 install pipenv
+
+    if [! $? -eq 0]; then
+        exit $?
+    fi
+fi
+
+export PIPENV_VENV_IN_PROJECT="enabled"
+
+pipenv install --dev
+
+yarn
+
+echo "✅ Done!"
