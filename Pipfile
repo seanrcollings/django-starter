@@ -18,9 +18,14 @@ django-extensions = "*"
 httpie = "*"
 lib = {editable = true, path = "./libs"}
 django = "*"
+django-ninja = "*"
 
 [requires]
 python_version = "3.8"
 
 [pipenv]
 allow_prereleases = true
+
+[scripts]
+server = "python manage.py runserver"
+test = "python manage.py test"

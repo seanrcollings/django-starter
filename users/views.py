@@ -38,7 +38,7 @@ class RegisterView(View):
             )
             user.save()
             messages.success(request, "Registered")
-            return redirect("users_index")
+            return redirect("users:index")
 
         return render(request, self.template_name, {"form": form})
 

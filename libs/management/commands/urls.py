@@ -1,8 +1,7 @@
-import sys
-from typing import List, Any, Sized, Dict
+from typing import List, Dict
 from io import StringIO
 
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from django.core.management import call_command
 from libs.util import safe_unpack
 
@@ -25,14 +24,13 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
-        print(options)
         out = StringIO()
         call_command("show_urls", stdout=out)
         routes = out.getvalue().split("\n")
         urls: List[Dict[str, str]] = []
         for route in routes:
-            url, method, name = safe_unpack(route.split("\t"), 3, "")
-            show = False if options["filter"] and not options["filter"] in url else True
+            url, method, name, _ = safe_unpack(route.split("\t"), 4, "")
+            show = not (options["filter"] and not options["filter"] in url)
             if show:
                 urls.append({"url": url, "method": method, "name": name})
 

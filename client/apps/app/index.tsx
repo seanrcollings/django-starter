@@ -25,6 +25,7 @@ function App() {
   }
 
   if (data) {
+    console.log(data);
     return (
       <div>
         {data.map(user => {

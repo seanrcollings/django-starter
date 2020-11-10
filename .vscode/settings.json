@@ -1,11 +1,13 @@
 {
-  "python.linting.mypyEnabled": true,
-  "python.linting.enabled": true,
-  "python.formatting.provider": "black",
   "python.pythonPath": ".venv/bin/python",
-  "python.linting.pylintArgs": [
-    "--load-plugins pylint_django",
-    "--django-settings-module=goal_tracker.settings"
-  ],
-  "python.autoComplete.extraPaths": ["./libs/**"]
+  "python.linting.mypyEnabled": true,
+  "python.formatting.provider": "black",
+
+  "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+
+  "python.autoComplete.extraPaths": ["./libs/**"],
+  "python.analysis.extraPaths": ["./libs/**"],
+  "python.analysis.diagnosticMode": "workspace",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
 }

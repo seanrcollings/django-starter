@@ -12,7 +12,7 @@ interface AxiosState<T> {
   readonly error: {
     status: number;
     statusText: string;
-    data: { detail: string };
+    data: {};
   } | null;
   readonly loading: boolean;
 }
@@ -57,24 +57,32 @@ function executePost<T>(
   axios
     .post(url, config)
     .then(response => {
-      setState({ ...state, data: response.data, loading: false });
+      setState({ error: null, data: response.data, loading: false });
     })
     .catch(error => {
-      setState({ ...state, error: error.response, loading: false });
+      setState({
+        data: null,
+        error: {
+          status: Number(error.response.status),
+          statusText: error.response.statusText,
+          data: error.response.data,
+        },
+        loading: false,
+      });
     });
 }
 
 export function usePost<T>(url: string, config: object = {}) {
-  const [state, setState] = useState<AxiosState<T>>({
+  const [response, setResponse] = useState<AxiosState<T>>({
     data: null,
     error: null,
     loading: false,
   });
 
   const execute = useCallback(() => {
-    setState({ ...state, loading: true });
-    executePost<T>(url, config, state, setState);
+    setResponse({ ...response, loading: true });
+    executePost<T>(url, config, response, setResponse);
   }, [url, config]);
 
-  return { state, execute };
+  return { response, execute };
 }
