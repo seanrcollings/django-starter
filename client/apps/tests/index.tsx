@@ -1,20 +1,17 @@
 import React from "react";
 import ReactDom from "react-dom";
-import api from "../common";
-import axios from "axios";
+
 import styled from "styled-components";
-import Cookie from "js-cookie";
 
+import api from "../common";
+import "../common/axiosSetup";
 import "./styles/main.scss";
-import Register from "./users/register";
 
-axios.defaults.headers.common["X-CSRFToken"] = Cookie.get("csrftoken");
-axios.defaults.withCredentials = true;
+import Register from "./users/register";
 
 const User = styled.div`
   color: white;
 `;
-
 function App() {
   const { data, error, loading } = api.getUsers();
   if (loading) {

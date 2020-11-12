@@ -15,3 +15,8 @@ class UserIn(SchemaEx):
     first_name: str
     last_name: str
     email: str
+
+
+class UserLogin(SchemaEx):
+    username: str
+    password: str

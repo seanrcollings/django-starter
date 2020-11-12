@@ -12,11 +12,10 @@ def __assert_path(path: Path):
 
 
 def __get_path_obj(stem, name, app_name):
-    catch_all: str = r"(?P<path>.*)"
+    catch_all: str = r"(?P<path>.*)$"
     return re_path(
-        rf"{stem}{catch_all}",
+        rf"^{stem}/{catch_all}",
         lambda request, path, name=name: render(request, f"{app_name}/{name}"),
-        name=stem,
     )
 
 
@@ -43,9 +42,9 @@ def pack_routes(app_name, base="index"):
     index = None
     paths = []
     for entry_point in entry_points:
-        assert (
-            entry_point.stem in pack_names
-        ), f"Template {entry_point} does not have an associated pack"
+        # assert (
+        #     entry_point.stem in pack_names
+        # ), f"Template {entry_point} does not have an associated pack"
 
         if entry_point.stem == base:
             index = entry_point

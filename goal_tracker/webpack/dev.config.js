@@ -3,9 +3,9 @@ const utils = require("./utils");
 
 module.exports = {
   mode: "development",
-  entry: utils.getPacks("./client/packs"),
+  entry: "./client/packs/tests",
   output: {
-    path: path.resolve(__dirname, "../../client/static/client/js"),
+    path: path.resolve("./client/static/client/js"),
     filename: "[name].js",
     chunkFilename: "[id]-[chunkhash].js",
     publicPath: "/static/",
@@ -42,5 +42,5 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
-  devtool: "source-map",
+  devtool: "inline-source-map",
 };
