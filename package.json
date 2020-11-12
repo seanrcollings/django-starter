@@ -28,7 +28,6 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.0",
     "dart-sass": "^1.25.0",
-    "error-overlay-webpack-plugin": "^0.4.1",
     "sass": "^1.28.0",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",

@@ -7,9 +7,9 @@ export interface UserType {
 }
 
 export function getUsers() {
-  return useGet<UserType[]>("/api/users");
+  return useGet<UserType[]>("/api/users/");
 }
 
 export function getUser(id: number) {
-  return useGet<UserType>(`/api/users/${id}`);
+  return useGet<UserType>(`/api/users/${id}/`);
 }

@@ -5,7 +5,7 @@ module.exports = {
   mode: "production",
   entry: utils.getPacks("./client/packs"),
   output: {
-    path: path.resolve(__dirname, "../../client/static/client/js"),
+    path: path.resolve("./client/static/client/js"),
     filename: "[name].js",
     chunkFilename: "[id]-[chunkhash].js",
     publicPath: "/static/",

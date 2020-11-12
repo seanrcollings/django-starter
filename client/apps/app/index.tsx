@@ -1,6 +1,6 @@
-import React, { SyntheticEvent } from "react";
+import React from "react";
 import ReactDom from "react-dom";
-import api, { usePost } from "../common";
+import api from "../common";
 import axios from "axios";
 import styled from "styled-components";
 import Cookie from "js-cookie";
@@ -21,11 +21,10 @@ function App() {
     return <div>Loading....</div>;
   }
   if (error) {
-    return <div>{error.data.detail}</div>;
+    return <div>{error.statusText}</div>;
   }
 
   if (data) {
-    console.log(data);
     return (
       <div>
         {data.map(user => {

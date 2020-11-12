@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from typing import List
-import sys
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,7 +41,6 @@ INSTALLED_APPS = [
     "client.apps.ClientConfig",
     "libs.apps.LibsConfig",
     "django_extensions",
-    "rest_framework",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -135,3 +133,5 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = ["client/static"]
+
+APPEND_SLASH = True

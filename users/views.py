@@ -5,17 +5,19 @@ from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from django.shortcuts import redirect
 
-from .models import User
+from .models import CustomUser
 from .forms import LoginForm, RegistrationForm
 
 
 class UserIndex(ListView):
-    model = User
+    model = CustomUser
+    context_object_name = "users"
     template_name = "users/index.html"
 
 
 class UserShow(DetailView):
-    model = User
+    model = CustomUser
+    context_object_name = "user"
     template_name = "users/show.html"
 
 
@@ -30,7 +32,7 @@ class RegisterView(View):
     def post(self, request, *args, **kwargs):
         form = self.form(request.POST)
         if form.is_valid():
-            user = User(
+            user = CustomUser(
                 username=request.POST.get("username"),
                 password=request.POST.get("password"),
                 first_name=request.POST.get("first_name"),
