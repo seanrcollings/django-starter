@@ -1,0 +1,11 @@
+@import "../../common/styles/base";
+
+body {
+  button {
+    @include material-button($green-accent);
+  }
+
+  .hidden {
+    display: none;
+  }
+}

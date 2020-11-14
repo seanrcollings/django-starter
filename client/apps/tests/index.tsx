@@ -12,6 +12,7 @@ import Register from "./users/register";
 const User = styled.div`
   color: white;
 `;
+
 function App() {
   const { data, error, loading } = api.getUsers();
   if (loading) {
