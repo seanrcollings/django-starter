@@ -23,10 +23,9 @@ export default class extends Controller {
         password,
       })
       .then(res => {
-        console.log(res);
+        this.redirect();
       })
       .catch(err => {
-        console.log(err.response);
         this.errorTarget.innerHTML = err.response.data.errors.detail;
       });
   }

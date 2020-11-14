@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 ENVIRONMENT = "development"
 
-WEBPACK_ROOT_URL = "http://localhost:3000"
+WEBPACK_ROOT_URL = "http://localhost:8080"
 
 
 # Quick-start development settings - unsuitable for production
