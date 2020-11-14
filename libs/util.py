@@ -21,3 +21,6 @@ def safe_unpack(iterable: Sized, expected_length: int, fill: Any = None):
 
 def error(errors: dict, status=400):
     return JsonResponse({"errors": errors}, status=status)
+
+
+# def get_installed_apps():

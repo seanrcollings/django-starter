@@ -1,4 +1,4 @@
-from libs.path import pack_routes
+from libs.path import PackRoutes
 
 # Adding a new route requires a server restart
-urlpatterns = pack_routes("client")
+urlpatterns = PackRoutes("client").urls
