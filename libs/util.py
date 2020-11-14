@@ -19,5 +19,5 @@ def safe_unpack(iterable: Sized, expected_length: int, fill: Any = None):
     return (*iterable, *fill_list)  # type: ignore
 
 
-def error(errors, status=400):
+def error(errors: dict, status=400):
     return JsonResponse({"errors": errors}, status=status)

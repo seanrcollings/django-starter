@@ -2,10 +2,11 @@ from typing import List
 from django.contrib.auth import authenticate, login
 from ninja import Router
 from ninja.security import django_auth
+
 from libs.util import error
+
 from ..forms import RegistrationForm, LoginForm
 from ..models import CustomUser
-
 from .schemas import *
 
 router = Router()
