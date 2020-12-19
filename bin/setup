@@ -14,7 +14,7 @@ fi
 
 export PIPENV_VENV_IN_PROJECT="enabled"
 
-pipenv install --dev
+pipenv install --dev --python 3.9
 
 yarn
 

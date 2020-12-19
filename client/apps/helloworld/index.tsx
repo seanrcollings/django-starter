@@ -5,10 +5,9 @@ import styled from "styled-components";
 
 import api from "../common";
 import "../common/axiosSetup";
-import "./styles/main.scss";
 
 const User = styled.div`
-  color: white;
+  background-color: green;
 `;
 
 function App() {
