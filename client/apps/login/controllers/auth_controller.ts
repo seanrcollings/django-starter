@@ -27,6 +27,11 @@ export default class extends Controller {
     this.showTab();
   }
 
+  showLogin() {
+    this.show = "login";
+    this.showTab();
+  }
+
   get show() {
     return this.data.get("show") || "";
   }

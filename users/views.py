@@ -1,7 +1,7 @@
 from django.shortcuts import render
+from django.contrib import messages
 from django.views import View
 from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from django.shortcuts import redirect
 
@@ -25,11 +25,11 @@ class RegisterView(View):
     form = RegistrationForm
     template_name = "users/register.html"
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         form = self.form()
         return render(request, self.template_name, {"form": form})
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         form = self.form(request.POST)
         if form.is_valid():
             user = CustomUser(

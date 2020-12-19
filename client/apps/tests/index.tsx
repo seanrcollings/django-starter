@@ -7,8 +7,6 @@ import api from "../common";
 import "../common/axiosSetup";
 import "./styles/main.scss";
 
-import Register from "./users/register";
-
 const User = styled.div`
   color: white;
 `;
@@ -28,7 +26,7 @@ function App() {
         {data.map(user => {
           return <User key={user.id}>{user.username}</User>;
         })}
-        <Register />
+        <a href='/users/logout'>Logout</a>
       </div>
     );
   }

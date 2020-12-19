@@ -1,14 +1,12 @@
 {% extends 'layouts/base.html' %} {% block content %}
 
     <div class="auth" data-controller="auth" data-auth-show="login">
-        <div class="auth-header">
-            <button data-action="click->auth#showRegister">Register</button>
-        </div>
         <div class="auth-login" data-controller="login" data-target="auth.login">
             <span data-target="login.error"></span><br/>
             <label>Username: </label><input data-target="login.username" type="text">
             <label>Password: </label><input data-target="login.password" type="password">
-            <button data-action="click->login#submit">Login</button>
+            <button class="secondary-button" data-action="click->auth#showRegister">Register</button>
+            <button class="primary-button" data-action="click->login#submit">Login</button>
         </div>
         <div class="auth-register hidden" data-controller="register" data-target="auth.register">
             <label>Username:</label>
@@ -21,7 +19,8 @@
             <input type='text'  data-target="register.firstName"/>
             <label>Last Name:</label>
             <input type='text'  data-target="register.lastName"/>
-            <button data-action="click->register#submit">Register</button>
+            <button class="secondary-button" data-action="click->auth#showLogin">Login</button>
+            <button class="primary-button" data-action="click->register#submit">Register</button>
         </div>
     </div>
 {% endblock content %}
