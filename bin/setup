@@ -1,10 +1,12 @@
 #!/bin/bash
 
-echo "Setting up Goal Tracker Dev environement..."
+# should be ran at the root of the project
+
+echo "Setting up Dev environement..."
 
 
 # Checks if pipenv is installed
-if [ -x "$(command --version)" ]; then
+if [ -x "$(pipenv --version)" ]; then
     pip3 install pipenv
 
     if [! $? -eq 0]; then
@@ -17,5 +19,8 @@ export PIPENV_VENV_IN_PROJECT="enabled"
 pipenv install --dev --python 3.9
 
 yarn
+
+project=${PWD##*/}
+mv ./django_starter ./$project
 
 echo "✅ Done!"

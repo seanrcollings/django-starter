@@ -12,7 +12,7 @@ from .schemas import *
 router = Router()
 
 
-@router.get("/", response=List[UserResponse], auth=django_auth)
+@router.get("/", response=List[UserResponse])
 def list_users(request):
     return User.objects.all()
 

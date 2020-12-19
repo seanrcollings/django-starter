@@ -12,24 +12,33 @@ const User = styled.div`
 
 function App() {
   const { data, error, loading } = api.getUsers();
-  if (loading) {
-    return <div>Loading....</div>;
-  }
-  if (error) {
-    return <div>{error.statusText}</div>;
-  }
 
-  if (data) {
-    return (
-      <div>
-        {data.map(user => {
-          return <User key={user.id}>{user.username}</User>;
-        })}
-        <a href='/users/logout'>Logout</a>
-      </div>
-    );
-  }
-  return <div></div>;
+  const renderUsers = () => {
+    if (loading) {
+      return <div>Loading....</div>;
+    }
+    if (error) {
+      return <div>{error.statusText}</div>;
+    }
+
+    if (data) {
+      return (
+        <div>
+          {data.map(user => {
+            return <User key={user.id}>{user.username}</User>;
+          })}
+          <a href='/users/logout'>Logout</a>
+        </div>
+      );
+    }
+  };
+
+  return (
+    <div>
+      <h1>Hello World!</h1>
+      {renderUsers()}
+    </div>
+  );
 }
 
 const entry = document.getElementById("app");
