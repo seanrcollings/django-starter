@@ -3,5 +3,5 @@ node_modules
 client/static/client/js
 __pycache__
 **/**.egg-info
-lib/build
+libs/build
 .venv

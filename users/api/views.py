@@ -6,7 +6,7 @@ from ninja.security import django_auth
 from libs.util import error
 
 from ..forms import RegistrationForm, LoginForm
-from ..models import CustomUser
+from ..models import User
 from .schemas import *
 
 router = Router()
@@ -14,14 +14,14 @@ router = Router()
 
 @router.get("/", response=List[UserResponse], auth=django_auth)
 def list_users(request):
-    return CustomUser.objects.all()
+    return User.objects.all()
 
 
 @router.post("/", response=UserResponse)
 def create_user(request, payload: UserIn):
     form = RegistrationForm(payload.dict())
     if form.is_valid():
-        user = CustomUser(**payload.dict())
+        user = User(**payload.dict())
         user.save()
         return user
 

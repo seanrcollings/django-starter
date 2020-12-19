@@ -5,18 +5,18 @@ from django.contrib.auth import authenticate, login, logout
 from django.views.generic import ListView, DetailView
 from django.shortcuts import redirect
 
-from .models import CustomUser
+from .models import User
 from .forms import LoginForm, RegistrationForm
 
 
 class UserIndex(ListView):
-    model = CustomUser
+    model = User
     context_object_name = "users"
     template_name = "users/index.html"
 
 
 class UserShow(DetailView):
-    model = CustomUser
+    model = User
     context_object_name = "user"
     template_name = "users/show.html"
 
@@ -32,7 +32,7 @@ class RegisterView(View):
     def post(self, request):
         form = self.form(request.POST)
         if form.is_valid():
-            user = CustomUser(
+            user = User(
                 username=request.POST.get("username"),
                 password=request.POST.get("password"),
                 first_name=request.POST.get("first_name"),

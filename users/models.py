@@ -5,7 +5,7 @@ from django.utils import timezone
 from .managers import UserManager
 
 
-class CustomUser(AbstractBaseUser, PermissionsMixin):
+class User(AbstractBaseUser, PermissionsMixin):
     username: models.CharField = models.CharField(
         "username", max_length=30, unique=True
     )
