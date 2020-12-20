@@ -1,15 +1,13 @@
-from ninja import Schema
-
-from libs.schema import SchemaEx
+from libs.schema import InSchema, OutSchema
 
 
-class UserResponse(Schema):
+class UserResponse(OutSchema):
     id: int
     username: str
     is_admin: bool
 
 
-class UserIn(SchemaEx):
+class UserIn(InSchema):
     username: str
     password: str
     first_name: str
@@ -17,6 +15,6 @@ class UserIn(SchemaEx):
     email: str
 
 
-class UserLogin(SchemaEx):
+class UserLogin(InSchema):
     username: str
     password: str
