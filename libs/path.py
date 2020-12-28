@@ -52,6 +52,7 @@ class PackRoutes:
 
     def repack(self):
         self.urls = self.pack_routes()
+        return self.urls
 
     def __get_path(self, route, template_name):
         """Returns the Django re_path object used for url matching

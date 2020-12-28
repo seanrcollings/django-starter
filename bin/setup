@@ -5,14 +5,15 @@
 echo "Setting up Dev environement..."
 
 
-# Checks if pipenv is installed
-if [ -x "$(pipenv --version)" ]; then
-    pip3 install pipenv
-
-    if [! $? -eq 0]; then
-        exit $?
+# Check that our dependancy managers are installed
+for COMMAND in pipenv yarn
+do
+    if ! command -v $COMMAND &> /dev/null
+    then
+        echo "$COMMAND could not be found, please install it"
+        exit 1
     fi
-fi
+done
 
 export PIPENV_VENV_IN_PROJECT="enabled"
 
